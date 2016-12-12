@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransactionRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Data>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-09T14:46:56.3893065+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-09T14:47:39.2732837+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-09T14:53:34.5448742+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-09T15:20:15.9189112+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>PC3</ItemName>
+      <TransactionType>Add Item</TransactionType>
+      <TransactionDate>2016-12-09T15:21:17.638485+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-09T15:27:36.6119924+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-09T15:30:39.4575191+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Add Item</TransactionType>
+      <TransactionDate>2016-12-09T15:31:05.3013825+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Upload Image</TransactionType>
+      <TransactionDate>2016-12-09T15:31:39.3372894+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Borrow Item</TransactionType>
+      <TransactionDate>2016-12-09T15:31:53.6728389+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Return Item</TransactionType>
+      <TransactionDate>2016-12-09T15:31:56.4642419+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Repair Item</TransactionType>
+      <TransactionDate>2016-12-09T15:31:59.3430121+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Return Item</TransactionType>
+      <TransactionDate>2016-12-09T15:32:02.5458954+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Red Ink</ItemName>
+      <TransactionType>Retire Item</TransactionType>
+      <TransactionDate>2016-12-09T15:32:05.0657676+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>mam</ItemName>
+      <TransactionType>Add User</TransactionType>
+      <TransactionDate>2016-12-09T15:32:12.6524077+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T08:25:17.675448+08:00</TransactionDate>
+    </TransactionLogViewModel>
+  </Data>
+</TransactionRepository>
