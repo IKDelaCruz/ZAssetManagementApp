@@ -97,5 +97,41 @@
       <TransactionType>Login</TransactionType>
       <TransactionDate>2016-12-12T08:25:17.675448+08:00</TransactionDate>
     </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T09:01:58.8785493+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T09:02:28.0555241+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T09:03:45.4729847+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T09:05:06.8093422+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T09:05:27.2809263+08:00</TransactionDate>
+    </TransactionLogViewModel>
+    <TransactionLogViewModel>
+      <Username>admin</Username>
+      <ItemName>Login</ItemName>
+      <TransactionType>Login</TransactionType>
+      <TransactionDate>2016-12-12T09:05:47.4815217+08:00</TransactionDate>
+    </TransactionLogViewModel>
   </Data>
 </TransactionRepository>

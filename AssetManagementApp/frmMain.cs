@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AssetManagementApp.Utilities;
 namespace AssetManagementApp
 {
     public partial class frmMain : Form
@@ -50,8 +50,7 @@ namespace AssetManagementApp
                 UserLogin();
             }
 
-            dvItems.DataSource = null;
-            dvItems.DataSource = ContainerOfModel.Instance.ItemModel.GetItems();
+            lvData.LoadData(ContainerOfModel.Instance.ItemModel.GetItems());
         }
         private void UserLogin()
         {
@@ -75,7 +74,7 @@ namespace AssetManagementApp
 
         private void doBorrowItem(object sender, EventArgs e)
         {
-            var id = dvItems.SelectedRows[0].Cells[0].Value.ToString();
+            var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
             new frmBorrow(obj, ContainerOfModel.Instance.UserViewModel.Username).ShowDialog();
@@ -90,7 +89,7 @@ namespace AssetManagementApp
 
         private void doReturnItem(object sender, EventArgs e)
         {
-            var id = dvItems.SelectedRows[0].Cells[0].Value.ToString();
+            var id = lvData.SelectedItems[1].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
             new frmReturn(obj).ShowDialog();
@@ -104,7 +103,7 @@ namespace AssetManagementApp
 
         private void doViewItem(object sender, EventArgs e)
         {
-            var id = dvItems.SelectedRows[0].Cells[0].Value.ToString();
+            var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
             new frmDetails(obj).ShowDialog();
@@ -113,7 +112,7 @@ namespace AssetManagementApp
 
         private void doRepairItem(object sender, EventArgs e)
         {
-            var id = dvItems.SelectedRows[0].Cells[0].Value.ToString();
+            var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
             new frmBorrow(obj, ContainerOfModel.Instance.UserViewModel.Username, true).ShowDialog();
@@ -128,7 +127,7 @@ namespace AssetManagementApp
 
         private void cmsItems_Opening(object sender, CancelEventArgs e)
         {
-            var id = dvItems.SelectedRows[0].Cells[0].Value.ToString();
+            var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
             if (obj.Status == ViewModel.ItemViewModel.ItemStatus.Available)
             {
@@ -162,7 +161,7 @@ namespace AssetManagementApp
 
         private void doRetire(object sender, EventArgs e)
         {
-            var id = dvItems.SelectedRows[0].Cells[0].Value.ToString();
+            var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
             new frmRetire(obj).ShowDialog();

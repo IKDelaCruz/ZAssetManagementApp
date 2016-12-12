@@ -44,9 +44,10 @@
             this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sysmteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dvItems = new System.Windows.Forms.DataGridView();
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -55,11 +56,9 @@
             this.cmsTsRepair = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsTsRetire = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCenter = new System.Windows.Forms.Panel();
-            this.sysmteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lvData = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvItems)).BeginInit();
             this.cmsItems.SuspendLayout();
             this.pnlCenter.SuspendLayout();
             this.SuspendLayout();
@@ -91,14 +90,14 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.doApplicationExit);
             // 
@@ -176,16 +175,31 @@
             // addToolStripMenuItem1
             // 
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
             this.addToolStripMenuItem1.Text = "Add";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.doAddUser);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.usersToolStripMenuItem.Text = "View";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
+            // 
+            // sysmteToolStripMenuItem
+            // 
+            this.sysmteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.sysmteToolStripMenuItem.Name = "sysmteToolStripMenuItem";
+            this.sysmteToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.sysmteToolStripMenuItem.Text = "System";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.aboutToolStripMenuItem.Text = "Transaction Logs";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -202,29 +216,6 @@
             // 
             this.tssStatus.Name = "tssStatus";
             this.tssStatus.Size = new System.Drawing.Size(0, 17);
-            // 
-            // dvItems
-            // 
-            this.dvItems.AllowUserToAddRows = false;
-            this.dvItems.AllowUserToDeleteRows = false;
-            this.dvItems.AllowUserToResizeRows = false;
-            this.dvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvItems.ContextMenuStrip = this.cmsItems;
-            this.dvItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dvItems.Location = new System.Drawing.Point(9, 8);
-            this.dvItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dvItems.MultiSelect = false;
-            this.dvItems.Name = "dvItems";
-            this.dvItems.RowHeadersVisible = false;
-            this.dvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvItems.ShowCellErrors = false;
-            this.dvItems.ShowCellToolTips = false;
-            this.dvItems.ShowEditingIcon = false;
-            this.dvItems.ShowRowErrors = false;
-            this.dvItems.Size = new System.Drawing.Size(843, 381);
-            this.dvItems.TabIndex = 2;
-            this.dvItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvItems_MouseClick);
             // 
             // cmsItems
             // 
@@ -281,7 +272,7 @@
             // 
             // pnlCenter
             // 
-            this.pnlCenter.Controls.Add(this.dvItems);
+            this.pnlCenter.Controls.Add(this.lvData);
             this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCenter.Location = new System.Drawing.Point(0, 24);
             this.pnlCenter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -290,20 +281,15 @@
             this.pnlCenter.Size = new System.Drawing.Size(861, 397);
             this.pnlCenter.TabIndex = 3;
             // 
-            // sysmteToolStripMenuItem
+            // lvData
             // 
-            this.sysmteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.sysmteToolStripMenuItem.Name = "sysmteToolStripMenuItem";
-            this.sysmteToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.sysmteToolStripMenuItem.Text = "System";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.aboutToolStripMenuItem.Text = "Transaction Logs";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.lvData.ContextMenuStrip = this.cmsItems;
+            this.lvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvData.Location = new System.Drawing.Point(9, 8);
+            this.lvData.Name = "lvData";
+            this.lvData.Size = new System.Drawing.Size(843, 381);
+            this.lvData.TabIndex = 0;
+            this.lvData.UseCompatibleStateImageBehavior = false;
             // 
             // frmMain
             // 
@@ -324,7 +310,6 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvItems)).EndInit();
             this.cmsItems.ResumeLayout(false);
             this.pnlCenter.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -341,7 +326,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tssStatus;
         private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dvItems;
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowToolStripMenuItem;
@@ -362,5 +346,6 @@
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sysmteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ListView lvData;
     }
 }
