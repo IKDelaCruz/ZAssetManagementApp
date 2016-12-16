@@ -48,7 +48,6 @@ C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagem
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.pdb
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\bin\Debug\AssetManagementApp.exe
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\bin\Debug\AssetManagementApp.pdb
-C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.csprojResolveAssemblyReference.cache
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.frmAddUser.resources
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.frmAddItem.resources
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.frmBase.resources
@@ -62,3 +61,5 @@ C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagem
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.frmUsers.resources
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.Properties.Resources.resources
 C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.csproj.GenerateResource.Cache
+C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.frmUserSelection.resources
+C:\Users\ian.delacruz.JAKAGROUP\Documents\GitHub\AssetManagementApp\AssetManagementApp\obj\Debug\AssetManagementApp.csprojResolveAssemblyReference.cache

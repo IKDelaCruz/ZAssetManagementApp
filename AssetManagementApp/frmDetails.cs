@@ -23,8 +23,10 @@ namespace AssetManagementApp
         {
             InitializeComponent();
 
-            cbxType.DataSource = Enum.GetValues(typeof(ItemViewModel.ItemType));
+            cbxType.DataSource = Enum.GetValues(typeof(ItemTypeViewModel.PrimaryItemType));
             cbxStatus.DataSource = Enum.GetValues(typeof(ItemViewModel.ItemStatus));
+            
+           
 
             obj = itm;
             imageFilename = Path.GetDirectoryName(Application.ExecutablePath) + "\\images\\" + obj.Id + ".jpg";
@@ -33,6 +35,7 @@ namespace AssetManagementApp
 
          
         }
+
         private void UpdateView()
         {
             if (File.Exists(imageFilename))
@@ -87,10 +90,14 @@ namespace AssetManagementApp
 
         private void btnLock_Click(object sender, EventArgs e)
         {
-            if(btnLock.Text == "Unlock")
+            ToggleLock();
+        }
+        private void ToggleLock()
+        {
+            if (btnLock.Text == "Unlock")
             {
                 btnLock.Text = "Lock";
-               
+
                 btnSave.Visible = true;
                 EnableInputs(true);
 
@@ -99,7 +106,7 @@ namespace AssetManagementApp
             else
             {
                 btnLock.Text = "Unlock";
-                
+
                 btnSave.Visible = false;
                 EnableInputs(false);
 
@@ -114,9 +121,9 @@ namespace AssetManagementApp
             txtDescription.ReadOnly = !enable;
 
             cbxStatus.Enabled = enable;
-            txtBorrower.ReadOnly = !enable;
+           
             dtpReturnDate.Enabled = enable;
-
+            btnBrowseUser.Enabled = enable;
             txtPurchasePrice.ReadOnly = !enable;
             dtpPurchaseDate.Enabled = enable;
             txtLifeSpan.ReadOnly = !enable;
@@ -129,15 +136,21 @@ namespace AssetManagementApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DoSave(true);
+        }
+        private void DoSave(bool toggle = false)
+        {
+            if(toggle)
+                ToggleLock();
 
             obj.AssetTag = txtAssetTag.Text;
             obj.Name = txtName.Text;
 
-            obj.Type = (ItemViewModel.ItemType)cbxType.SelectedValue;
+            obj.Type = (ItemTypeViewModel.PrimaryItemType)cbxType.SelectedValue;
             obj.Description = txtDescription.Text;
 
             obj.Status = (ItemViewModel.ItemStatus)cbxStatus.SelectedValue;
-            obj.Borrower = txtBorrower.Text ;
+            obj.Borrower = txtBorrower.Text;
             obj.ReturnDate = dtpReturnDate.Value;
             obj.PurchasePrice = double.Parse(txtPurchasePrice.Text);
             obj.PurchaseDate = dtpPurchaseDate.Value;
@@ -146,12 +159,15 @@ namespace AssetManagementApp
 
             ContainerOfModel.Instance.ItemModel.UpdateItem(obj);
         }
-
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            var purchasePrice = obj.PurchasePrice;
+            DoCalculate();
+        }
+        private void DoCalculate()
+        {
+            var purchasePrice = double.Parse(txtPurchasePrice.Text);
             var lifeSpan = int.Parse(txtLifeSpan.Text);
-            var purchaseDate = obj.PurchaseDate;
+            var purchaseDate = dtpPurchaseDate.Value;
 
             var dur = DateTime.Now - purchaseDate;
             var daysUsed = dur.TotalDays;
@@ -159,6 +175,17 @@ namespace AssetManagementApp
 
             var currentValue = purchasePrice * ((daysLife - daysUsed) / daysLife);
             txtCurrentValue.Text = currentValue.ToString("n2");
+
+            DoSave();
+        }
+        private void btnBrowseUser_Click(object sender, EventArgs e)
+        {
+            var dlg = new frmUserSelection();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                txtBorrower.Text = dlg.SelectedUsername;
+            }
         }
     }
 }

@@ -23,18 +23,18 @@ namespace AssetManagementApp.Model
         {
             if (transRepo.Data == null)
             {
-                transRepo.Data = new List<TransactionLogViewModel>();
+                transRepo.Data = new List<ViewModelBase>();
             }
 
             transRepo.Data.Add(log);
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
         public void Insert(string type, string data)
         {
             if (transRepo.Data == null)
             {
-                transRepo.Data = new List<TransactionLogViewModel>();
+                transRepo.Data = new List<ViewModelBase>();
             }
 
             transRepo.Data.Add(new TransactionLogViewModel {
@@ -44,11 +44,11 @@ namespace AssetManagementApp.Model
                 Username = ContainerOfModel.Instance.UserViewModel.Username
             });
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
         public List<TransactionLogViewModel> GetLogs()
         {
-            return transRepo.Data;
+            return transRepo.Data.ConvertAll(h=> (TransactionLogViewModel) h);
         }
 
     }

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace AssetManagementApp.ViewModel
 {
-    public abstract class ViewModelBase
+  
+    public class ViewModelBase
     {
-        
-
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

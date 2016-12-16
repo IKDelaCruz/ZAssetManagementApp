@@ -11,14 +11,19 @@ namespace AssetManagementApp.Repository
 {
     public class ItemRepository : RepositoryBase
     {
-        public List<ItemViewModel> Data { get; set; }
-  
+        
+
+        public override List<ViewModelBase> GetData()
+        {
+            return Data;
+        }
+
         public override void Load()
         {
             if (!ExistingData())
                 return;
 
-            Data = new List<ItemViewModel>();
+            Data = new List<ViewModelBase>();
             XmlSerializer serializer = new XmlSerializer(typeof(ItemRepository));
             StreamReader reader = new StreamReader(typeof(ItemRepository).ToString());
 

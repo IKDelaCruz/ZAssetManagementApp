@@ -10,14 +10,17 @@ namespace AssetManagementApp.Utilities
 {
     public static class ListViewExtension
     {
-        public static void LoadData(this ListView lv, List<ItemViewModel> items)
+        public static void LoadData(this ListView lv, List<ViewModelBase> items)
         {
             lv.Items.Clear();
+            
             foreach(ItemViewModel iVL in items)
             {
-                var newItem = new ListViewItem(iVL.Name);
+                var newItem = new ListViewItem(iVL.Name + " [" + iVL.Status.ToString() + "]");
+                newItem.ImageIndex = Convert.ToInt32(iVL.Type);
                 newItem.SubItems.Add(iVL.Id.ToString());
                 newItem.SubItems.Add(iVL.Type.ToString());
+              
                 lv.Items.Add(newItem);
             }
         }

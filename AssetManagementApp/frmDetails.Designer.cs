@@ -30,6 +30,7 @@
         {
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBorrower = new System.Windows.Forms.TextBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnChangePicture = new System.Windows.Forms.Button();
             this.txtLifeSpan = new System.Windows.Forms.TextBox();
@@ -52,11 +53,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxType = new System.Windows.Forms.ComboBox();
-            this.txtBorrower = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLock = new System.Windows.Forms.Button();
+            this.btnBrowseUser = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnBrowseUser);
+            this.panel1.Controls.Add(this.txtBorrower);
             this.panel1.Controls.Add(this.btnCalculate);
             this.panel1.Controls.Add(this.btnChangePicture);
             this.panel1.Controls.Add(this.txtLifeSpan);
@@ -97,7 +100,6 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbxType);
-            this.panel1.Controls.Add(this.txtBorrower);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cbxStatus);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -105,6 +107,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(669, 331);
             this.panel1.TabIndex = 40;
+            // 
+            // txtBorrower
+            // 
+            this.txtBorrower.Location = new System.Drawing.Point(462, 51);
+            this.txtBorrower.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBorrower.Name = "txtBorrower";
+            this.txtBorrower.ReadOnly = true;
+            this.txtBorrower.Size = new System.Drawing.Size(159, 23);
+            this.txtBorrower.TabIndex = 44;
             // 
             // btnCalculate
             // 
@@ -323,14 +334,6 @@
             this.cbxType.Size = new System.Drawing.Size(193, 23);
             this.cbxType.TabIndex = 26;
             // 
-            // txtBorrower
-            // 
-            this.txtBorrower.Location = new System.Drawing.Point(462, 51);
-            this.txtBorrower.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtBorrower.Name = "txtBorrower";
-            this.txtBorrower.Size = new System.Drawing.Size(193, 23);
-            this.txtBorrower.TabIndex = 29;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -374,6 +377,17 @@
             this.btnLock.UseVisualStyleBackColor = true;
             this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
             // 
+            // btnBrowseUser
+            // 
+            this.btnBrowseUser.Location = new System.Drawing.Point(629, 51);
+            this.btnBrowseUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnBrowseUser.Name = "btnBrowseUser";
+            this.btnBrowseUser.Size = new System.Drawing.Size(26, 23);
+            this.btnBrowseUser.TabIndex = 45;
+            this.btnBrowseUser.Text = "...";
+            this.btnBrowseUser.UseVisualStyleBackColor = true;
+            this.btnBrowseUser.Click += new System.EventHandler(this.btnBrowseUser_Click);
+            // 
             // frmDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -408,7 +422,6 @@
         private System.Windows.Forms.ComboBox cbxStatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBorrower;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCurrentValue;
@@ -423,5 +436,7 @@
         private System.Windows.Forms.Button btnChangePicture;
         private System.Windows.Forms.Button btnLock;
         private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.TextBox txtBorrower;
+        private System.Windows.Forms.Button btnBrowseUser;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AssetManagementApp.Model;
+using AssetManagementApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,7 @@ namespace AssetManagementApp
 
         private void frmAddItem_Load(object sender, EventArgs e)
         {
-            cbxType.DataSource = Enum.GetValues(typeof(ItemType));
+            cbxType.DataSource = Enum.GetValues(typeof(ItemTypeViewModel.PrimaryItemType));
         }
     }
 }

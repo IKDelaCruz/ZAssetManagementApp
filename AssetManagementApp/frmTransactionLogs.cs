@@ -20,7 +20,7 @@ namespace AssetManagementApp
 
         private void frmTransactionLogs_Load(object sender, EventArgs e)
         {
-            dvItems.DataSource = ContainerOfModel.Instance.TransactionLogModel.GetLogs();
+            dvItems.DataSource = ContainerOfModel.Instance.TransactionLogModel.GetLogs().OrderByDescending(h=>h.TransactionDate).ToList();
         }
     }
 }

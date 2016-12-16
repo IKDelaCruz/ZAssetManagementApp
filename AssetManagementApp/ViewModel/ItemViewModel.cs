@@ -16,17 +16,12 @@ namespace AssetManagementApp.ViewModel
             Broken,
             Disposed
         }
-        public enum ItemType
-        {
-            Asset,
-            Licenses,
-            Accesories,
-            Consumable
-        }
+       
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public ItemType Type { get; set; }
+        
+
+      
+        public ItemTypeViewModel.PrimaryItemType Type { get; set; }
 
         [Browsable(false)]
         public string Description { get; set; }
@@ -42,6 +37,32 @@ namespace AssetManagementApp.ViewModel
         public ItemStatus Status { get; set; }
         public string Borrower { get; set; }
         public DateTime ReturnDate { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
 

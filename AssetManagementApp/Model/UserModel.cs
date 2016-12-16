@@ -8,24 +8,25 @@ using AssetManagementApp.ViewModel;
 
 namespace AssetManagementApp.Model
 {
-    public class UserModel : ModelBase 
+    public class UserModel : ModelBase
     {
-    
+
         UserRepository userReporsitory;
         UserViewModel userViewModel;
 
-        public UserModel(UserRepository userRepository) : base (userRepository)
+        public UserModel(UserRepository userRepository) : base(userRepository)
         {
             this.userReporsitory = userRepository;
             userViewModel = new UserViewModel();
         }
         public UserViewModel AuthenticateUser(string username, string password)
         {
-            if(userReporsitory.Data == null | userReporsitory.Data.Count == 0)
+            if (userReporsitory.Data == null || userReporsitory.Data.Count == 0)
             {
                 userReporsitory.CreateDefaultUser();
             }
-            var user = userReporsitory.Data.FirstOrDefault(h => h.Username == username && h.Password == password);
+            var concreteUser = userReporsitory.Data.ConvertAll(h => (UserViewModel)h);
+            var user = concreteUser.FirstOrDefault(h => h.Username == username && h.Password == password);
             if (user != null)
             {
                 userViewModel.IsAuthenticated = true;
@@ -51,14 +52,14 @@ namespace AssetManagementApp.Model
             };
 
             userReporsitory.Data.Add(obj);
-            SaveData();
+            SaveData("AssetManagementApp.Model");
 
             return obj;
         }
 
         public List<UserViewModel> GetUsers()
         {
-            return userReporsitory.Data;
+            return userReporsitory.Data.ConvertAll(h=> (UserViewModel)h);
         }
 
     }

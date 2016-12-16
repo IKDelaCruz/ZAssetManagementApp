@@ -16,6 +16,7 @@ namespace AssetManagementApp
         public frmMain()
         {
             InitializeComponent();
+            lvData.LargeImageList = imgLMain;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace AssetManagementApp
 
         private void doReturnItem(object sender, EventArgs e)
         {
-            var id = lvData.SelectedItems[1].SubItems[1].Text.ToString();
+            var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
             new frmReturn(obj).ShowDialog();
@@ -103,6 +104,8 @@ namespace AssetManagementApp
 
         private void doViewItem(object sender, EventArgs e)
         {
+            if (lvData.SelectedItems.Count == 0)
+                return;
             var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
 
@@ -127,6 +130,12 @@ namespace AssetManagementApp
 
         private void cmsItems_Opening(object sender, CancelEventArgs e)
         {
+            if (lvData.SelectedItems.Count == 0)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             var id = lvData.SelectedItems[0].SubItems[1].Text.ToString();
             var obj = ContainerOfModel.Instance.ItemModel.GetItem(int.Parse(id));
             if (obj.Status == ViewModel.ItemViewModel.ItemStatus.Available)

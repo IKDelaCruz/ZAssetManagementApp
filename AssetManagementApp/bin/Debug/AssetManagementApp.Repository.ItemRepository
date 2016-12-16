@@ -9,8 +9,8 @@
       <AssetTag>PC1</AssetTag>
       <PurchasePrice>20000</PurchasePrice>
       <LifeSpan>5</LifeSpan>
-      <PurchaseDate>2011-12-12T13:40:43</PurchaseDate>
-      <Currentvalue>10.94</Currentvalue>
+      <PurchaseDate>2016-09-01T13:40:43</PurchaseDate>
+      <Currentvalue>18883.64</Currentvalue>
       <Status>Disposed</Status>
       <Borrower />
       <ReturnDate>2016-12-09T15:24:19.64863+08:00</ReturnDate>
@@ -24,7 +24,7 @@
       <PurchasePrice>25000</PurchasePrice>
       <LifeSpan>5</LifeSpan>
       <PurchaseDate>2016-12-09T13:52:08.0041391+08:00</PurchaseDate>
-      <Currentvalue>0</Currentvalue>
+      <Currentvalue>24960.82</Currentvalue>
       <Status>Disposed</Status>
       <Borrower />
       <ReturnDate>2016-12-09T13:54:55.9713094+08:00</ReturnDate>
@@ -32,30 +32,44 @@
     <ItemViewModel>
       <Id>3</Id>
       <Name>PC3</Name>
-      <Type>Asset</Type>
+      <Type>Accesories</Type>
       <Description>Desktop Computer</Description>
       <AssetTag>PC3</AssetTag>
       <PurchasePrice>25000</PurchasePrice>
       <LifeSpan>5</LifeSpan>
-      <PurchaseDate>2012-12-09T15:21:17</PurchaseDate>
-      <Currentvalue>-27.41</Currentvalue>
-      <Status>Disposed</Status>
-      <Borrower />
+      <PurchaseDate>2016-12-09T15:21:17</PurchaseDate>
+      <Currentvalue>24961.64</Currentvalue>
+      <Status>Borrowed</Status>
+      <Borrower>admin</Borrower>
       <ReturnDate>2016-12-09T15:24:34.2061667+08:00</ReturnDate>
     </ItemViewModel>
     <ItemViewModel>
       <Id>4</Id>
       <Name>Red Ink</Name>
-      <Type>Asset</Type>
+      <Type>Consumable</Type>
       <Description>HP</Description>
       <AssetTag>RDINKHP</AssetTag>
       <PurchasePrice>500</PurchasePrice>
       <LifeSpan>5</LifeSpan>
       <PurchaseDate>2016-12-09T15:31:05.2973796+08:00</PurchaseDate>
-      <Currentvalue>0</Currentvalue>
+      <Currentvalue>499.23</Currentvalue>
       <Status>Disposed</Status>
       <Borrower />
       <ReturnDate>2016-12-09T15:32:05.0657676+08:00</ReturnDate>
+    </ItemViewModel>
+    <ItemViewModel>
+      <Id>5</Id>
+      <Name>Windows Serial</Name>
+      <Type>Licenses</Type>
+      <Description>123456789</Description>
+      <AssetTag>WIN01</AssetTag>
+      <PurchasePrice>15001</PurchasePrice>
+      <LifeSpan>5</LifeSpan>
+      <PurchaseDate>2016-12-01T09:50:04</PurchaseDate>
+      <Currentvalue>14910.32</Currentvalue>
+      <Status>Disposed</Status>
+      <Borrower />
+      <ReturnDate>2016-12-12T10:01:20.7033615+08:00</ReturnDate>
     </ItemViewModel>
   </Data>
 </ItemRepository>

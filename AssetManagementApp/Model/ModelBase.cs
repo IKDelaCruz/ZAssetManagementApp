@@ -18,9 +18,9 @@ namespace AssetManagementApp.Model
             Repostiory.Load();
         }
       
-        public void SaveData()
+        public void SaveData(string type)
         {
-            Repostiory.Save();
+            Repostiory.Save(type);
         }
 
     }

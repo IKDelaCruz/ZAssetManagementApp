@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace AssetManagementApp.ViewModel
 {
-   public class TransactionLogViewModel : ViewModelBase
+   
+    public class ItemTypeViewModel : ViewModelBase
     {
-        public string Username { get; set; }
-        public string ItemName { get; set; }
-        public string TransactionType { get; set; }
-        public DateTime TransactionDate { get; set; }
-
         public int Id
         {
             get
@@ -38,5 +34,15 @@ namespace AssetManagementApp.ViewModel
                 throw new NotImplementedException();
             }
         }
+
+        public enum PrimaryItemType
+        {
+            Asset,
+            Licenses,
+            Accesories,
+            Consumable
+        }
+
+
     }
 }

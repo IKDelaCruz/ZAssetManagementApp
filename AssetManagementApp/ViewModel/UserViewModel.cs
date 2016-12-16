@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetManagementApp.ViewModel
 {
+    [Serializable]
     public class UserViewModel : ViewModelBase
     {
         public enum UserType
@@ -20,5 +21,7 @@ namespace AssetManagementApp.ViewModel
         public string Password { get; set; }
 
         public UserType Type { get; set; }
+
+       
     }
 }

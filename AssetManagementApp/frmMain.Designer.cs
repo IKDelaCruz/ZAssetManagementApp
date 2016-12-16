@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,7 @@
             this.cmsTsRetire = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCenter = new System.Windows.Forms.Panel();
             this.lvData = new System.Windows.Forms.ListView();
+            this.imgLMain = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.cmsItems.SuspendLayout();
@@ -285,11 +287,22 @@
             // 
             this.lvData.ContextMenuStrip = this.cmsItems;
             this.lvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvData.LargeImageList = this.imgLMain;
             this.lvData.Location = new System.Drawing.Point(9, 8);
             this.lvData.Name = "lvData";
             this.lvData.Size = new System.Drawing.Size(843, 381);
+            this.lvData.SmallImageList = this.imgLMain;
             this.lvData.TabIndex = 0;
             this.lvData.UseCompatibleStateImageBehavior = false;
+            // 
+            // imgLMain
+            // 
+            this.imgLMain.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLMain.ImageStream")));
+            this.imgLMain.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLMain.Images.SetKeyName(0, "1481527393_cpu.png");
+            this.imgLMain.Images.SetKeyName(1, "1481527569_preferences-desktop-cryptography.png");
+            this.imgLMain.Images.SetKeyName(2, "1481527153_preferences-desktop-mouse.png");
+            this.imgLMain.Images.SetKeyName(3, "1481527145_krita.png");
             // 
             // frmMain
             // 
@@ -347,5 +360,6 @@
         private System.Windows.Forms.ToolStripMenuItem sysmteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ListView lvData;
+        private System.Windows.Forms.ImageList imgLMain;
     }
 }

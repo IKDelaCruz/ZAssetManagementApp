@@ -9,14 +9,19 @@ using System.IO;
 
 namespace AssetManagementApp.Repository
 {
+ 
+    [Serializable]
     public class UserRepository : RepositoryBase
     {
 
-        public List<UserViewModel> Data { get; set; }
+       
 
         public override void Load()
         {
-            Data = new List<UserViewModel>();
+            if (!ExistingData())
+                return;
+
+            Data = new List<ViewModelBase>();
             XmlSerializer serializer = new XmlSerializer(typeof(UserRepository));
             StreamReader reader = new StreamReader(typeof(UserRepository).ToString());
 
@@ -27,9 +32,15 @@ namespace AssetManagementApp.Repository
         }
         public void CreateDefaultUser()
         {
-            Data = new List<UserViewModel>();
+
+            Data = new List<ViewModelBase>();
             Data.Add(new UserViewModel { Username = "admin", Password = "admin", IsAuthenticated = false});
-            Save();
+            Save("AssetManagementApp.Model");
+        }
+
+        public override List<ViewModelBase> GetData()
+        {
+            return Data;
         }
     }
 }

@@ -11,14 +11,19 @@ namespace AssetManagementApp.Repository
 {
    public class TransactionRepository : RepositoryBase
     {
-        public List<TransactionLogViewModel> Data { get; set; }
+       
+
+        public override List<ViewModelBase> GetData()
+        {
+            throw new NotImplementedException();
+        }
 
         public override void Load()
         {
             if (!ExistingData())
                 return;
 
-            Data = new List<TransactionLogViewModel>();
+            Data = new List<ViewModelBase>();
             XmlSerializer serializer = new XmlSerializer(typeof(TransactionRepository));
             StreamReader reader = new StreamReader(typeof(TransactionRepository).ToString());
 

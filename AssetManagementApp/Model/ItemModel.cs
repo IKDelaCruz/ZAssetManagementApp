@@ -29,7 +29,7 @@ namespace AssetManagementApp.Model
             }
             else
             {
-                itemRepository.Data = new List<ItemViewModel>();
+                itemRepository.Data = new List<ViewModelBase>();
             }
 
 
@@ -41,58 +41,59 @@ namespace AssetManagementApp.Model
                 Name = name,
                 PurchasePrice = purchasePrice,
                 Status = ItemViewModel.ItemStatus.Available,
-                PurchaseDate = DateTime.Now, LifeSpan = 5
+                PurchaseDate = DateTime.Now,
+                LifeSpan = 5
             });
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
-        public List<ItemViewModel> GetItems()
+        public List<ViewModelBase> GetItems()
         {
             return itemRepository.Data;
         }
         public ItemViewModel GetItem(int id)
         {
-            return itemRepository.Data.FirstOrDefault(h => h.Id == id);
+            return (ItemViewModel)itemRepository.Data.FirstOrDefault(h => h.Id == id);
         }
         public void BorrowItem(int id, string username, DateTime returnDate)
         {
-            var item = itemRepository.Data.FirstOrDefault(h => h.Id == id);
+            var item = (ItemViewModel)itemRepository.Data.FirstOrDefault(h => h.Id == id);
             item.Status = ItemViewModel.ItemStatus.Borrowed;
             item.Borrower = username;
             item.ReturnDate = returnDate;
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
 
         public void Repair(int id, string username, DateTime returnDate)
         {
-            var item = itemRepository.Data.FirstOrDefault(h => h.Id == id);
+            var item = (ItemViewModel)itemRepository.Data.FirstOrDefault(h => h.Id == id);
             item.Status = ItemViewModel.ItemStatus.Broken;
             item.Borrower = username;
             item.ReturnDate = returnDate;
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
         public void ReturnItem(int id)
         {
-            var item = itemRepository.Data.FirstOrDefault(h => h.Id == id);
+            var item =(ItemViewModel) itemRepository.Data.FirstOrDefault(h => h.Id == id);
             item.Status = ItemViewModel.ItemStatus.Available;
             item.Borrower = "";
             item.ReturnDate = DateTime.Now;
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
         public void RetireItem(int id)
         {
-            var item = itemRepository.Data.FirstOrDefault(h => h.Id == id);
+            var item = (ItemViewModel)itemRepository.Data.FirstOrDefault(h => h.Id == id);
             item.Status = ItemViewModel.ItemStatus.Disposed;
             item.Borrower = "";
             item.ReturnDate = DateTime.Now;
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
         public void UpdateItem(ItemViewModel itm)
         {
-            var item = itemRepository.Data.FirstOrDefault(h => h.Id == itm.Id);
+            var item = (ItemViewModel)itemRepository.Data.FirstOrDefault(h => h.Id == itm.Id);
             item.AssetTag = itm.AssetTag;
             item.Name = itm.Name;
             item.Description = itm.Description;
@@ -101,7 +102,7 @@ namespace AssetManagementApp.Model
             item.ReturnDate = itm.ReturnDate;
             item.Status = itm.Status;
 
-            SaveData();
+            SaveData("AssetManagementApp.Model");
         }
 
     }
